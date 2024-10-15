@@ -2,7 +2,7 @@ const http = require('http');
 const mongoose = require('mongoose');
 const app = require('./app');
 
-const PORT = process.env.PORT || 8000;
+const port = process.env.PORT || 8000;
 
 const MONGO_URL = 'mongodb+srv://frontend:g49HrZaRlpUbHckd@mydoon.ksbtsax.mongodb.net/MyDatabase?retryWrites=true&w=majority&appName=MyDoon';
 
@@ -24,8 +24,8 @@ mongoose.connection.on('error', (err) => {
 async function startServer() {
     try {
         await mongoose.connect(MONGO_URL, mongooseOptions);
-        server.listen(PORT, () => {
-            console.log(`Listening on port ${PORT}...`);
+        server.listen(port, () => {
+            console.log(`Listening on port ${port}...`);
         });
     } catch (err) {
         console.error(`Error starting the server: ${err}`);

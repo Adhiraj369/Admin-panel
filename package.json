@@ -1,0 +1,21 @@
+{
+  "name": "mydoon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run start --prefix frontend && npm run start --prefix backend",
+    "server": "npm run start --prefix backend",
+    "client": "npm run start --prefix frontend",
+    "watch": "npm run server & npm run client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "http": "^0.0.1-security",
+    "react-router-dom": "^6.26.0"
+  }
+}

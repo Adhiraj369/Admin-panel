@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run start --prefix frontend && npm run start --prefix backend",
+ "start": "concurrently \"cd frontend && npm install && npm run start\" \"cd backend && npm install && npm run start\"",
     "server": "npm run start --prefix backend",
     "client": "npm run start --prefix frontend",
     "watch": "npm run server & npm run client"

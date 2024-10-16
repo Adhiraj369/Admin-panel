@@ -16,7 +16,8 @@
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "http": "^0.0.1-security",
-    "mongoose": "^8.5.2"
+    "mongoose": "^8.5.2",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",

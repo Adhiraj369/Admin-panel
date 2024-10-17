@@ -9,6 +9,11 @@ const AlertsSchema = new mongoose.Schema({
         type: Number,
         required: true,
         unique: true,
+    },
+    category: {
+        type: String,
+        enum: ['cat1', 'cat2', 'cat3'], // Allow only these values
+        required: true,
     }
 });
 

@@ -6,9 +6,13 @@ async function httpgetAllAlerts(req, res) {
 }
 
 async function httpAddAlert(req, res) {
-    const alertData = req.body;
+    const { Alert, category } = req.body; // Destructure Alert and category from request body
+    if (!Alert || !category) {
+        return res.status(400).json({ error: 'Alert and category are required' });
+    }
+
     try {
-        const newAlert = await addAlert(alertData);
+        const newAlert = await addAlert({ Alert, category }); // Pass the category to addAlert
         return res.status(201).json(newAlert);
     } catch (err) {
         return res.status(400).json({ error: err.message });

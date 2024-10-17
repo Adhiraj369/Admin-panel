@@ -6,6 +6,7 @@ const app = express();
 const AlertsRouter = require('./routes/alerts/alerts.routes');
 const ComplainsRouter = require('./routes/complains/complains.routes');
 const temp = require('./routes/temperature/temperature');
+const SchemeRouter = require("./routes/schemes/SchemesRouter");
 
 // Enable CORS for all origins (adjust as needed for production)
 app.use(cors()); // Allow CORS for all origins or specify a domain in production
@@ -17,6 +18,8 @@ app.use(express.static(path.join(__dirname, '../../frontend/build')));
 // Define your API routes
 app.use('/admin/alerts', AlertsRouter);
 app.use('/admin/complains', ComplainsRouter);
+app.use('/admin/scheme', SchemeRouter);
+
 app.use('/', temp);
 
 // Catch all other requests and return the React app

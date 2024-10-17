@@ -16,6 +16,7 @@ import { AuthProvider, AuthContext } from './contexts/AuthContext';
 import { LoadScript } from '@react-google-maps/api';
 import RoleGuard from './routes/Login/RoleGuard';
 import UnAuth from './routes/unAuthorised/UnAuth';
+import Addschemes from './routes/AddSchemes/Addschemes';
 
 const GOOGLE_MAPS_API_KEY = 'AIzaSyAU4SEzLK-hc2pBfE_xggoyAigxopPQ7mw';
 
@@ -58,16 +59,31 @@ function App() {
 
                         
                         <Route path="dashboard/garbage/allReports" element={
-                            <RoleGuard allowedRoles={['garbage']}>
-                                <LiveReports />
-                            </RoleGuard>
-                        } />
+    <RoleGuard allowedRoles={['garbage']}>
+        <LiveReports />
+    </RoleGuard>
+} />
+
+<Route path="dashboard/water" element={
+    <RoleGuard allowedRoles={['water']}>
+        <WaterLeakage />
+    </RoleGuard>
+} />
+
+<Route path="dashboard/deadanimal" element={
+    <RoleGuard allowedRoles={['animal']}>
+        <Animal />
+    </RoleGuard>
+} />
+
+
 
 
                         <Route path="dashboard/govscheme" element={<Schemes />} />
                         <Route path="dashboard/govservice" element={<Services />} />
-                        <Route path="dashboard/water" element={<WaterLeakage />} />
-                        <Route path="dashboard/deadanimal" element={<Animal />} />
+                        
+                        <Route path="dashboard/govscheme/addscheme" element={<Addschemes />} />
+
                         
 
                     </Route>

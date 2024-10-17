@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AVForm from "../../components/staffTables/AVForm";
 import AVTable from "../../components/staffTables/AVTable";
-import Logo from "../../assets/logoMain.png";
+
 
 function AllVehicle() {
   const [tableData, setTableData] = useState([]);
@@ -35,13 +35,7 @@ function AllVehicle() {
 
   return (
     <>
-      <div className="flex items-center justify-between py-4 px-8">
-        <img src={Logo} alt="Logo" className="h-12 cursor-pointer" />
-        <div className="flex items-center space-x-2">
-          <span className="text-lg cursor-pointer">←</span>
-          <span className="text-xl font-semibold">Back to Admin Panel</span>
-        </div>
-      </div>
+      
       <div className="flex flex-col lg:flex-row items-start lg:space-x-4 px-8">
         <AVForm onFormSubmit={handleFormSubmit} />
         <AVTable tableData={tableData} onSubmit={handleSubmitToServer} />

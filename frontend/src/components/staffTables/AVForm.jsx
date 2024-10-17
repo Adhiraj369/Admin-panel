@@ -91,7 +91,7 @@ const AVForm = ({ onFormSubmit }) => {
       </div> */}
       <div className="flex justify-center mb-5">
         <select
-          className="w-80 p-2.5 rounded-full border-2 border-black text-lg font-semibold"
+          className="w-60 p-1.5 rounded-full border-2 border-black text-lg font-semibold"
           onChange={handleDropdownChange}
         >
           <option>Attendance</option>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AForm from "../../components/staffTables/AForm";
 import ATable from "../../components/staffTables/ATable";
-import Logo from "../../assets/logoMain.png";
+
 
 function Attendance() {
   const [tableData, setTableData] = useState([]);
@@ -35,13 +35,7 @@ function Attendance() {
 
   return (
     <>
-      <div className="flex items-center justify-between py-4 px-8">
-        <img src={Logo} alt="Logo" className="h-12 cursor-pointer" />
-        <div className="flex items-center space-x-2">
-          <span className="text-lg cursor-pointer">←</span>
-          <span className="text-xl font-semibold">Back to Admin Panel</span>
-        </div>
-      </div>
+      
       <div className="flex flex-col lg:flex-row items-start lg:space-x-4 px-8">
         <AForm onFormSubmit={handleFormSubmit} />
         <ATable tableData={tableData} onSubmit={handleSubmitToServer} />

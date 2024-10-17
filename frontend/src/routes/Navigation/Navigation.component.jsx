@@ -40,7 +40,7 @@ export default function Navigation() {
                         </NavComponent>
                         
                         <NavComponent
-                            url="staff" 
+                            url="attendance" 
                             styling="font-medium" 
                             activeStyling="font-bold"
                         >

@@ -6,20 +6,29 @@ const app = express();
 const AlertsRouter = require('./routes/alerts/alerts.routes');
 const ComplainsRouter = require('./routes/complains/complains.routes');
 const temp = require('./routes/temperature/temperature');
-const SchemeRouter = require("./routes/schemes/SchemesRouter");
+const SchemeRouter = require("./routes/schemes/SchemesRouter")
+const attendanceRoutes = require("./routes/Staff/routes/attendanceRoutes");
+const totalGarbageRoutes = require("./routes/Staff/routes/totalGarbageRoutes");
+const srRoutes = require("./routes/Staff/routes/srRoutes");
+const maintenanceRoutes = require("./routes/Staff/routes/maintenanceRoutes");
+const avRoutes = require("./routes/Staff/routes/avRoutes");;
 
-// Enable CORS for all origins (adjust as needed for production)
-app.use(cors()); // Allow CORS for all origins or specify a domain in production
+
+app.use(cors()); 
 app.use(express.json());
 
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, '../../frontend/build')));
 
-// Define your API routes
+
 app.use('/admin/alerts', AlertsRouter);
 app.use('/admin/complains', ComplainsRouter);
 app.use('/admin/scheme', SchemeRouter);
-
+app.use("/admin/attendance", attendanceRoutes);
+app.use("/admin/totalGarbage", totalGarbageRoutes);
+app.use("/admin/staff-report", srRoutes);
+app.use("/admin/maintenance", maintenanceRoutes);
+app.use("/admin/av", avRoutes);
 app.use('/', temp);
 
 // Catch all other requests and return the React app

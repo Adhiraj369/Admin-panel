@@ -5,7 +5,6 @@ import Navigation from './routes/Navigation/Navigation.component';
 import Dashboard from './routes/DashBoard/dashboard.component';
 import Reports from './routes/Report/report.component';
 import Alerts from './routes/Alerts/Alerts.components';
-import Staff from './routes/Staff/staff.component';
 import Livetracking from './routes/Garbage/LiveTracking';
 import LiveReports from './routes/LiveReports/LiveReports';
 import Schemes from './routes/governmentschemes/schemes';
@@ -17,6 +16,11 @@ import { LoadScript } from '@react-google-maps/api';
 import RoleGuard from './routes/Login/RoleGuard';
 import UnAuth from './routes/unAuthorised/UnAuth';
 import Addschemes from './routes/AddSchemes/Addschemes';
+import Attendance from './routes/Staff/Attendance';
+import AllVehicle from './routes/Staff/AllVehicle';
+import Maintenance from './routes/Staff/Maintenance';
+import StaffReport from './routes/Staff/StaffReport';
+import TotalGarbage from './routes/Staff/TotalGarbage';
 
 const GOOGLE_MAPS_API_KEY = 'AIzaSyAU4SEzLK-hc2pBfE_xggoyAigxopPQ7mw';
 
@@ -41,7 +45,6 @@ function App() {
                         <Route path="dashboard" element={<Dashboard />} />
                         <Route path="reports" element={<Reports />} />
                         <Route path="alerts" element={<Alerts />} />
-                        <Route path="staff" element={<Staff />} />
 
 
                         <Route path="dashboard/garbage" element={
@@ -83,6 +86,13 @@ function App() {
                         <Route path="dashboard/govservice" element={<Services />} />
                         
                         <Route path="dashboard/govscheme/addscheme" element={<Addschemes />} />
+                        {/* <Route path="/" element={<Navigate to="/attendance" />} /> */}
+
+        <Route path="attendance" element={<Attendance />} />
+        <Route path="all-vehicle" element={<AllVehicle/>} />
+        <Route path="maintenance" element={<Maintenance />} />
+        <Route path="staff-report" element={<StaffReport />} />
+        <Route path="total-garbage" element={<TotalGarbage />} />
 
                         
 

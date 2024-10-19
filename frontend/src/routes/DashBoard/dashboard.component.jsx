@@ -9,7 +9,7 @@ import Img5 from "../../assets/Shop@3x.png";
 import Img6 from "../../assets/sea-waves_75765 1.png";
 import Img7 from "../../assets/Road_alt_fill.png";
 import Img8 from "../../assets/bus_162786 1.png";
-// import Img9 from "../../assets/street-lamp_2531855 1.png";
+import Img9 from "../../assets/street-lamp_2531855 1.png";
 import axios from "axios"; // Make sure to import axios
 
 export default function Dashboard() {
@@ -99,7 +99,7 @@ export default function Dashboard() {
             <ul className="flex">
               <Holder img={Img7} title="Road Repair" url="road" />
               <Holder img={Img8} title="Public Transport" url="transport" />
-              <Holder img={Img8} title="Street Lights" url="lights" />
+              <Holder img={Img9} title="Street Lights" url="lights" />
             </ul>
           </div>
 

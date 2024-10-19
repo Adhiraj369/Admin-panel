@@ -34,20 +34,20 @@ const TGForm = ({ onFormSubmit }) => {
   const handleDropdownChange = (e) => {
     const selectedValue = e.target.value;
     switch (selectedValue) {
-        case "Attendance":
+      case "Attendance":
         navigate("/admin/attendance");
         break;
       case "Total Garbage":
-        navigate("/admin/total-garbage");
+        navigate("/admin/totalgarbage");
         break;
       case "All Vehicle":
-        navigate("/admin/all-vehicle");
+        navigate("/admin/allvehicle");
         break;
       case "Maintenance":
         navigate("/admin/maintenance");
         break;
       case "Staff Report":
-        navigate("/admin/staff-report");
+        navigate("/admin/staffreport");
         break;
       default:
         break;

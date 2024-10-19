@@ -5,8 +5,8 @@ const { addSRData, getSRData } = require("../controllers/srController");
 
 const router = express.Router();
 
-router.post("/submit", addSRData);
+router.post("/add", addSRData);
 
-router.get("/fetch", getSRData);
+router.get("/get", getSRData);
 
 module.exports = router;

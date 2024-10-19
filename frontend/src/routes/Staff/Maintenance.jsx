@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import MForm from "../../components/staffTables/MForm";
 import MTable from "../../components/staffTables/MTable";
 
-
 function Maintenance() {
   const [tableData, setTableData] = useState([]);
 
@@ -16,7 +15,7 @@ function Maintenance() {
       return;
     }
 
-    fetch("http://localhost:8000/admin/maintenance/submit", {
+    fetch("http://localhost:8000/admin/maintenance/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,8 +34,6 @@ function Maintenance() {
 
   return (
     <>
-      
-      
       <div className="flex flex-col lg:flex-row items-start lg:space-x-4 px-8">
         <MForm onFormSubmit={handleFormSubmit} />
         <MTable tableData={tableData} onSubmit={handleSubmitToServer} />

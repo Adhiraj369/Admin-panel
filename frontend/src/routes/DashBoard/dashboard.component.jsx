@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Dropdown from "../../components/Dropdown";
 import Holder from "../../components/Holder";
-import Img1 from "../../assets/transportation-truck_75588 1.png";
+import Img1 from "../../assets/transportation-truck_75588 1 .png";
 import Img2 from "../../assets/dog 4.png";
 import Img3 from "../../assets/Component 3.png";
 import Img4 from "../../assets/blood_206397 1.png";
@@ -85,18 +85,18 @@ export default function Dashboard() {
         </div>
 
         <div className="flex">
-          <div className="flex flex-col">
-            <ul className="flex">
+          <div className="flex flex-col gap-2 scale-90">
+            <ul className="flex gap-2">
               <Holder img={Img1} title="Garbage Vehicle" url="garbage" />
               <Holder img={Img2} title="Dead Animal" url="deadanimal" />
               <Holder img={Img3} title="Open Manholes" url="manholes" />
             </ul>
-            <ul className="flex">
+            <ul className="flex gap-2">
               <Holder img={Img4} title="Water Leakage" url="water" />
               <Holder img={Img5} title="Public Sandas" url="toilets" />
               <Holder img={Img6} title="Stagnant Water" url="stagnant" />
             </ul>
-            <ul className="flex">
+            <ul className="flex gap-2">
               <Holder img={Img7} title="Road Repair" url="road" />
               <Holder img={Img8} title="Public Transport" url="transport" />
               <Holder img={Img9} title="Street Lights" url="lights" />

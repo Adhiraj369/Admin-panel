@@ -48,10 +48,10 @@ export default function Login({ onLogin }) {
                     <svg height="550" width="550">
                         <circle cx="275" cy="275" r="275" fill="white" />
                     </svg>
-                    <div className="absolute inset-0 flex items-center justify-center text-white z-30">
+                    <div className="absolute inset-0  flex items-center justify-center text-white z-30">
                         <form onSubmit={handleSubmit}>
-                            <ul className="flex flex-col justify-center items-center relative">
-                                <li className="flex items-center justify-center">
+                            <ul className="flex flex-col w-[120%] right-5 justify-start mt-[-30px] items-center relative">
+                                <li className="flex items-center justify-center scale-125">
                                     <img
                                         src={Logo}
                                         alt="Logo"
@@ -62,7 +62,7 @@ export default function Login({ onLogin }) {
                                     <input
                                         ref={emailRef}
                                         type="email"
-                                        className="focus:outline-none border-none text-slate-900 p-2 shadow-lg text-lg rounded-md transition duration-300 focus:shadow-custom m-3"
+                                        className="focus:outline-none border-none w-[150%] ml-[-50px] text-slate-900 p-1 my-2 text-lg rounded-xl bg-[#3A81F11A]"
                                         placeholder="Email"
                                     />
                                 </li>
@@ -70,7 +70,7 @@ export default function Login({ onLogin }) {
                                     <input
                                         type="password"
                                         ref={passwordRef}
-                                        className="focus:outline-none border-none text-slate-900 p-2 m-3 shadow-lg text-lg rounded-md transition duration-300 focus:shadow-custom"
+                                        className="focus:outline-none border-none w-[150%] ml-[-50px] text-slate-900 p-1 my-2 text-lg rounded-xl bg-[#3A81F11A]"
                                         placeholder="Password"
                                     />
                                 </li>
@@ -79,6 +79,7 @@ export default function Login({ onLogin }) {
                                         {errorMessage}
                                     </li>
                                 )}
+                                {/* fix the width */}
                                 <li>
                                     <Button type="submit">Login</Button>
                                 </li>

@@ -34,12 +34,12 @@ function Header() {
     }
 
     return (
-        <div className='m-10 relative'>
-            <ul className='flex justify-between'>
+        <div className='mt-6 mb-12 mx-10 relative'>
+            <ul className='flex justify-between items-center'>
                 <li>
-                    <img src={Logo} alt="Logo" className="w-20 h-20 object-contain cursor-pointer" onClick={handleClick}/>
+                    <img src={Logo} alt="Logo" className="w-16 h-16 object-contain cursor-pointer" onClick={handleClick}/>
                 </li>
-                <li className='text-2xl font-semibold mt-4'>
+                <li className='text-xl font-bold font-sans mt-4'>
                     {title}
                 </li>
                 <li className='mt-4'>
@@ -49,7 +49,7 @@ function Header() {
                     <img
                         src={NotiBell}
                         alt="Notification Bell"
-                        className="w-10 h-10 object-contain cursor-pointer mt-4"
+                        className="w-8 h-8 object-contain cursor-pointer mt-4"
                         onClick={toggleDialog}
                     />
                     {showDialog && (
@@ -74,8 +74,8 @@ function Header() {
                     )}
                 </li>
                 <li className='flex'>
-                    <img src={UserImg} alt="User Profile" className="w-10 h-10 object-contain cursor-pointer mt-4" />
-                    <span className='mt-3 font-semibold p-2 text-lg'>{email}</span>
+                    <img src={UserImg} alt="User Profile" className="w-8 h-8 object-contain cursor-pointer mt-4" />
+                    <span className='mt-3 font-semibold p-2'>{email}</span>
                 </li>
             </ul>
         </div>

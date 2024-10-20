@@ -43,7 +43,7 @@ function Header() {
                     {title}
                 </li>
                 <li className='mt-4'>
-                    <input type="text" placeholder='Search' className='p-1 bg-slate-200 pl-16 pr-16 rounded-3xl text-center'/>
+                    <input type="text" placeholder='Search' className='p-1 bg-slate-200 pl-3 pr-20 rounded-3xl'/>
                 </li>
                 <li className='relative'>
                     <img

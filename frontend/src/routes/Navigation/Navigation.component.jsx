@@ -1,7 +1,8 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../../components/header';
-import Contact from '../../assets/Phone@3x.png'
+import Contact from '../../assets/Phone@3x.png';
+import Settings from '../../assets/settings.png';
 import NavComponent from '../../components/NavComponent';
 
 
@@ -12,19 +13,21 @@ export default function Navigation() {
         <>
             <Header />
             <div className='flex'>
-                <nav className='bg-slate-100 mr-4 ml-4 h-[75vh] w-[18vw] flex-shrink-0 flex rounded-lg'>
-                    <ul className='flex flex-col justify-around w-full items-center'>
-                        <NavComponent 
+                <nav className='mr-4 ml-4 h-[75vh] w-[15vw] flex-shrink-0 flex'>
+                    <ul className='flex flex-col justify-start mt-5 gap-12 w-full items-start pl-5'>
+                        <NavComponent
+                            className='text-sm'
                             url="dashboard" 
-                            styling="font-medium"  
+                            styling="font-normal"  
                             activeStyling="font-bold" 
                         >
                             Dashboard
                         </NavComponent>
 
                         <NavComponent
+                            className='text-sm'
                             url="reports" 
-                            styling="font-medium" 
+                            styling="font-normal" 
                             activeStyling="font-bold"
                         >
                              Reports
@@ -32,23 +35,28 @@ export default function Navigation() {
 
 
                         <NavComponent
+                            className='text-sm'
                             url="alerts" 
-                            styling="font-medium" 
+                            styling="font-normal" 
                             activeStyling="font-bold"
                         >
                              Alert Request
                         </NavComponent>
                         
                         <NavComponent
+                            className='text-sm'
                             url="attendance" 
-                            styling="font-medium" 
+                            styling="font-normal" 
                             activeStyling="font-bold"
                         >
                              Staff Report
                         </NavComponent>
                         
-                        <li className='border-t border-gray-300 w-[17vw] flex justify-center items-center'>
-    <img src={Contact} alt="User Profile" className="w-8 h-8 object-contain cursor-pointer mt-4" />
+
+                        
+                        <li className='flex flex-col border-t border-gray-300 w-[5vw] gap-2 justify-center items-center mt-10'>
+                            <img src={Settings} alt="Settings" className="w-6 h-6 object-contain cursor-pointer mt-4" />
+                            <img src={Contact} alt="User Profile" className="w-6 h-6 object-contain cursor-pointer mt-4" />
                         </li>
                     </ul>
                 </nav>

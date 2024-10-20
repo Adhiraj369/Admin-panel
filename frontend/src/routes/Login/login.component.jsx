@@ -2,6 +2,7 @@ import React, { useRef, useState, useContext } from 'react';
 import { Navigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import ImgBack from '../../assets/login.jpg';
+import LoginBg from '../../assets/login2.png';
 import Logo from '../../assets/logoMain.png';
 import Button from '../../components/Button';
 
@@ -39,8 +40,8 @@ export default function Login({ onLogin }) {
     return (
         <div className="relative h-screen w-full flex items-center justify-center">
             <div
-                className="absolute inset-0 bg-cover bg-center opacity-50"
-                style={{ backgroundImage: `url(${ImgBack})` }}
+                className="absolute inset-0 bg-cover bg-center opacity-20 invert-[100%] scale-100"
+                style={{ backgroundImage: `url(${LoginBg})` }}
             ></div>
             <div className="relative z-10">
                 <div className="relative rounded-full transition duration-300 hover:shadow-custom">

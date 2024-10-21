@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import Logo from '../assets/logoMain.png';
 import NotiBell from '../assets/Bell_pin.png';
+import RightArrow from '../assets/right_arrow.png';
 import UserImg from '../assets/User_cicrle.png';
 
 function Header() {
@@ -73,9 +74,10 @@ function Header() {
                         </div>
                     )}
                 </li>
-                <li className='flex'>
+                <li className='flex items-center'>
                     <img src={UserImg} alt="User Profile" className="w-8 h-8 object-contain cursor-pointer mt-4" />
                     <span className='mt-3 font-semibold p-2'>{email}</span>
+                    <img src={RightArrow} alt="" className='h-5 w-5 rotate-90 mt-4' />
                 </li>
             </ul>
         </div>

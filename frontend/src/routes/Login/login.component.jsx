@@ -62,7 +62,7 @@ export default function Login({ onLogin }) {
                                     <input
                                         ref={emailRef}
                                         type="email"
-                                        className="focus:outline-none border-none w-[150%] ml-[-50px] text-slate-900 p-1 my-2 text-lg rounded-xl bg-[#3A81F11A]"
+                                        className="focus:outline-none border-none w-[150%] ml-[-50px] text-slate-900 p-1 pl-2 my-2 text-lg rounded-xl bg-[#3A81F11A]"
                                         placeholder="Email"
                                     />
                                 </li>
@@ -70,7 +70,7 @@ export default function Login({ onLogin }) {
                                     <input
                                         type="password"
                                         ref={passwordRef}
-                                        className="focus:outline-none border-none w-[150%] ml-[-50px] text-slate-900 p-1 my-2 text-lg rounded-xl bg-[#3A81F11A]"
+                                        className="focus:outline-none border-none w-[150%] ml-[-50px] text-slate-900 p-1 pl-2 my-2 text-lg rounded-xl bg-[#3A81F11A]"
                                         placeholder="Password"
                                     />
                                 </li>
@@ -80,7 +80,7 @@ export default function Login({ onLogin }) {
                                     </li>
                                 )}
                                 {/* fix the width */}
-                                <li>
+                                <li className='scale-x-[135%] rounded-full pl-1'>
                                     <Button type="submit">Login</Button>
                                 </li>
                             </ul>

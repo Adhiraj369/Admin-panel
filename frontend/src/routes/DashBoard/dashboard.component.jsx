@@ -10,6 +10,8 @@ import Img6 from "../../assets/sea-waves_75765 1.png";
 import Img7 from "../../assets/Road_alt_fill.png";
 import Img8 from "../../assets/bus_162786 1.png";
 import Img9 from "../../assets/street-lamp_2531855 1.png";
+import LeftArrow from "../../assets/left_arrow.png";
+import RightArrow from "../../assets/right_arrow.png";
 import axios from "axios"; // Make sure to import axios
 
 export default function Dashboard() {
@@ -80,42 +82,46 @@ export default function Dashboard() {
   return (
     <>
       <div>
-        <div className="flex justify-center items-center mr-[25rem] mt-2">
+        <div className="flex justify-center items-center mr-[33rem] mt-4 z-50">
           <Dropdown />
         </div>
 
         <div className="flex">
-          <div className="flex flex-col gap-2 scale-90">
-            <ul className="flex gap-2">
+          <div className="flex flex-col items-center">
+            <ul className="flex mb-[-0.5rem]">
               <Holder img={Img1} title="Garbage Vehicle" url="garbage" />
               <Holder img={Img2} title="Dead Animal" url="deadanimal" />
               <Holder img={Img3} title="Open Manholes" url="manholes" />
             </ul>
-            <ul className="flex gap-2">
+            <ul className="flex mb-[-0.5rem]">
               <Holder img={Img4} title="Water Leakage" url="water" />
               <Holder img={Img5} title="Public Sandas" url="toilets" />
               <Holder img={Img6} title="Stagnant Water" url="stagnant" />
             </ul>
-            <ul className="flex gap-2">
+            <ul className="flex mb-[-0.25rem]">
               <Holder img={Img7} title="Road Repair" url="road" />
               <Holder img={Img8} title="Public Transport" url="transport" />
               <Holder img={Img9} title="Street Lights" url="lights" />
             </ul>
+            <div className="flex gap-1 m-1 pb-3">
+              <div className="h-6 w-6 rounded-full bg-white border-2 border-blue-300"><img src={LeftArrow} alt="" /></div>
+              <div className="h-6 w-6 rounded-full bg-white border-2 border-blue-300"><img src={RightArrow} alt="" /></div>
+            </div>
           </div>
 
           <div className="w-[30vw]">
-            <div className="border-l border-gray-300 m-8 mt-[-1.6rem]">
+            <div className="border-l border-gray-300 m-8 mt-[-3rem]">
               <ul className="flex flex-col justify-start">
-                <li className="bg-white m-4 h-[38vh] w-[24vw] rounded-xl flex flex-col items-center">
-                  <p className="font-semibold text-xl mt-4 text-red-500">
+                <li className="bg-white m-4 h-[42vh] w-[28vw] rounded-2xl flex flex-col items-start px-3">
+                  <p className="font-semibold text-xl mt-2 mb-[-0.5rem] text-red-500">
                     Alerts
                   </p>
-                  <div className="m-4 border-t-[1.5px] border-slate-200">
+                  <div className="m-4 ml-0 border-t-[1.5px] w-full border-slate-200">
                     {error && <p className="text-red-500">{error}</p>}
-                    <ul className="flex flex-col">
+                    <ul className="flex flex-col pt-3">
                       {alerts.length > 0 ? (
                         alerts.map((alert) => (
-                          <li key={alert.id} className="m-1">
+                          <li key={alert.id} className="m-1 w-full">
                             {alert.Alert}
                           </li>
                         ))
@@ -127,13 +133,13 @@ export default function Dashboard() {
                     </ul>
                   </div>
                 </li>
-                <li className="bg-white m-4 h-[20vh] w-[24vw] rounded-xl">
-                  <div className="flex flex-row justify-between">
-                    <div className="text-5xl m-4">{temperature}°C</div>
-                    <ul className="flex flex-col items-center m-4">
-                      <li className="m-2 font-medium">{dayOfWeek}</li>
-                      <li className="m-2 font-medium">{monthDay}</li>
-                      <li className="m-2 font-medium">{time}</li>
+                <li className="bg-white m-4 h-[20vh] w-[28vw] rounded-2xl">
+                  <div className="flex justify-between items-center h-full">
+                    <div className="text-5xl m-3">{temperature}°C</div>
+                    <ul className="flex flex-col gap-1 items-center m-4">
+                      <li className="text-sm font-semibold">{dayOfWeek}</li>
+                      <li className="text-sm font-semibold">{monthDay}</li>
+                      <li className="text-sm font-semibold">{time}</li>
                     </ul>
                   </div>
                 </li>

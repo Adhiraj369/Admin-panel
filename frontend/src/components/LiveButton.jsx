@@ -14,7 +14,7 @@ export default function LiveButton({ url, children }) {
   return (
     <button 
       onClick={() => handleClick(url)} 
-      className={`font-medium text-lg rounded-2xl p-1.5 ${isActive ? 'bg-white' : 'bg-default'}`}
+      className={`font-medium rounded-full py-1 px-10 ${isActive ? 'bg-white' : 'bg-default'}`}
     >
       {children}
     </button>

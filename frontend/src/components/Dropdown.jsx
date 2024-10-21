@@ -9,6 +9,7 @@ function Dropdown() {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
   const title = path.includes('admin/dashboard/govscheme')
     ? 'Schemes'
         : path.includes('/admin/dashboard/animalwelfare')
@@ -16,17 +17,17 @@ function Dropdown() {
             : path.includes('admin/dashboard/govservice')
                 ? 'Government Services'
                 : path.includes('staff')
-          ? 'Staff'
-          : path.includes('admin/dashboard')
-        ? 'Complains'
+                  ? 'Staff'
+                  : path.includes('admin/dashboard')
+                    ? 'Complains'
                     : '';
 
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left z-50">
       <div>
         <button
           type="button"
-          className="inline-flex justify-center w-full rounded-2xl border border-gray-300 shadow-sm pr-16 pl-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
+          className="inline-flex justify-between items-center w-[220%] rounded-2xl border border-gray-300 shadow-sm px-4 py-1 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
           id="menu-button"
           aria-expanded="true"
           aria-haspopup="true"
@@ -34,7 +35,7 @@ function Dropdown() {
         >
           {title}
           <svg
-            className="-mr-1 ml-2 h-5 w-5"
+            className={`-mr-0 ml-1 mt-0.5 h-6 w-6 opacity-60 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -51,22 +52,22 @@ function Dropdown() {
 
       {isOpen && (
         <div
-          className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+          className="origin-top-right absolute left-0 w-[220%] rounded-full ring-black ring-opacity-5 focus:outline-none"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
         >
-          <div className="py-1" role="none">
-            <a href="/admin/dashboard/govscheme" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+          <div className="" role="none">
+            <a href="/admin/dashboard/govscheme" className="block px-4 py-1.5 text-xs text-gray-700 bg-white rounded-full border-2 border-black hover:bg-gray-50" role="menuitem">
               Government Schemes
             </a>
-            <a href="/admin/dashboard" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+            <a href="/admin/dashboard" className="block px-4 py-1.5 text-xs text-gray-700 bg-white rounded-full border-2 border-black hover:bg-gray-50" role="menuitem">
               Complains
             </a>
-            <a href="/admin/dashboard/govservice" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+            <a href="/admin/dashboard/govservice" className="block px-4 py-1.5 text-xs text-gray-700 bg-white rounded-full border-2 border-black hover:bg-gray-50" role="menuitem">
               Government Services
             </a>
-            <a href="/admin/dashboard/animalwelfare" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+            <a href="/admin/dashboard/animalwelfare" className="block px-4 py-1.5 text-xs text-gray-700 bg-white rounded-full border-2 border-black hover:bg-gray-50" role="menuitem">
               Animal Wellfare
             </a>
           </div>

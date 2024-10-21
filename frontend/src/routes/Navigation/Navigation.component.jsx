@@ -61,7 +61,7 @@ export default function Navigation() {
                     </ul>
                 </nav>
                 
-                 <div className='flex-grow mr-10 h-[75vh] bg-[#3a80f1] bg-opacity-10 rounded-xl'>
+                 <div className='flex-grow mr-10 h-[75vh] bg-[#3a80f1] bg-opacity-10 rounded-3xl'>
                     <Outlet />
                 </div>
             </div>

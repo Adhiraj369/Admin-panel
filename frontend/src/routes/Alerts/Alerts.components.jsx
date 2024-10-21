@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import RedDot from '../../assets/Ellipse 191.png';
+import RightArrow from '../../assets/right_arrow.png';
 
 function Alerts() {
   const [alerts, setAlerts] = useState([]);
   const [newAlert, setNewAlert] = useState('');
   const [category, setCategory] = useState('cat1'); // Add state for category
   const [error, setError] = useState('');
+  const currentDate = new Date().toLocaleDateString("en-US");
 
   useEffect(() => {
     async function fetchAlerts() {
@@ -47,52 +49,63 @@ function Alerts() {
   return (
     <>
       
-      <div className='flex flex-col items-center'>
-        <span>
-        <div className='h-[5vh] m-4 flex-auto'>
-          <label htmlFor="alert">New Alert:</label>
-          <input
-            type="text"
-            className='rounded-xl text-center px-12 m-2'
-            id='alert'
-            value={newAlert}
-            onChange={handleInputChange}
-          />
+      <div className='relative flex flex-col px-12'>
 
-          <div>
-            <label htmlFor="category" className='mr-2'>Category:</label>
-          <select id="category" value={category} onChange={handleCategoryChange}>
-            <option value="cat1">Cat 1</option>
-            <option value="cat2">Cat 2</option>
-            <option value="cat3">Cat 3</option>
-          </select>
+        <div className="absolute right-3 top-28 xl:top-20  pt-2 flex mb-0 ml-[1000px] text-gray-500 scale-[85%]">
+          <span className="text-black font-semibold whitespace-nowrap mr-1">Date:</span>{" "}
+          {currentDate}
+          <img src={RightArrow} alt="" className='rotate-90 h-6 w-6' />
+        </div>
+
+        <div className='m-4 mb-2 flex-auto self-center'>
+          <div className='mb-[-0.5rem]'>
+            <label htmlFor="alert">New Alert:</label>
+            <input
+              type="text"
+              className='rounded-full pl-3 w-[80%] font-semibold py-1 m-2 focus:outline-none'
+              id='alert'
+              value={newAlert}
+              onChange={handleInputChange}
+            />
           </div>
           
- </div>
-          <button                  
-            className="text-slate-200 bg-blue-600 px-4 py-1 shadow-lg text-md rounded-xl  transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg focus:outline-none m-4"
+          <div className='flex items-center justify-between'>
+            <label htmlFor="category" className='mr-3.5'>Category:</label>
+            <select className='pr-28 pl-2 rounded-full py-[-1rem] h-[6vh]' id="category" value={category} onChange={handleCategoryChange}>
+              <option value="cat1">Cat 1</option>
+              <option value="cat2">Cat 2</option>
+              <option value="cat3">Cat 3</option>
+            </select>
+            <button                  
+            className="text-slate-200 bg-blue-600 px-16 py-[6px] shadow-lg text-md rounded-full transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg focus:outline-none m-4"
             onClick={handleFormSubmit}               
-          >                  
-            Generate        
-          </button>
-          </span>
-        
-        <h2 className='text-xl font-bold mb-4'>All Reports</h2>
-        <div className='b overflow-y-auto max-h-[500px]'>
-          {error && <p className='text-red-500'>{error}</p>}
-          <ul className='flex flex-col items-start'>
-            {alerts.length > 0 ? (
-              alerts.map((alert, index) => (
-                <li key={index} className='m-1 p-2 text-lg font-md flex flex-row items-center'>
-                  <img src={RedDot} alt="" className='mr-10'/>
-                  {alert.Alert} - <span className='font-bold'>{alert.category}</span> {/* Display category */}
-                </li>
-              ))
-            ) : (
-              <li className='m-2 p-2'>No alerts available</li>
-            )}
-          </ul>
+            >                  
+              Generate        
+            </button>
+          </div>
         </div>
+        
+        <div className='mt-7'>
+          <div className='overflow-y-auto max-h-[500px]'>
+            {error && <p className='text-red-500'>{error}</p>}
+            <ul className='flex flex-col items-start gap-4'>
+              {alerts.length > 0 ? (
+                alerts.map((alert, index) => (
+                  <li key={index} className='text-md font-md flex justify-between items-center w-full'>
+                    <div className='flex'>
+                      <img src={RedDot} alt="" className='mr-10 scale-90'/>
+                      <span className='font-normal'>{alert.Alert }</span>  -  <span className='font-bold'>{alert.category}</span> {/* Display category */}
+                    </div>
+                    <img src={RightArrow} className='h-7 w-7' alt="" />
+                  </li>
+                ))
+              ) : (
+                <li className='m-2 p-2'>No alerts available</li>
+              )}
+            </ul>
+          </div>
+        </div>
+        
       </div>
     </>
   );

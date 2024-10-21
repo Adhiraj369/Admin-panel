@@ -44,7 +44,7 @@ export default function Livetracking() {
             </div>
             <div className="flex justify-between gap-16 text-sm">
               <div className="flex items-center gap-3">
-                <img src={Truck} alt="" className="h-5 w-5"  />
+                <img src={Truck} alt="" className="h-5 w-5" />
                 <div>UK12HJ1112</div>
               </div>
               <div>Ward No. -35</div>

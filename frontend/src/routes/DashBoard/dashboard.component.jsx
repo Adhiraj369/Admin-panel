@@ -82,7 +82,7 @@ export default function Dashboard() {
   return (
     <>
       <div>
-        <div className="flex justify-center items-center mr-[33rem] mt-4 z-50">
+        <div className="flex justify-center items-center mr-[26rem] xl:mr-[33rem] mt-4 z-50">
           <Dropdown />
         </div>
 
@@ -112,7 +112,7 @@ export default function Dashboard() {
           <div className="w-[30vw]">
             <div className="border-l border-gray-300 m-8 mt-[-3rem]">
               <ul className="flex flex-col justify-start">
-                <li className="bg-white m-4 h-[42vh] w-[28vw] rounded-2xl flex flex-col items-start px-3">
+                <li className="bg-white m-4 h-[42vh] xl:w-[28vw] w-[23vw] rounded-2xl flex flex-col items-start px-3">
                   <p className="font-semibold text-xl mt-2 mb-[-0.5rem] text-red-500">
                     Alerts
                   </p>
@@ -133,8 +133,8 @@ export default function Dashboard() {
                     </ul>
                   </div>
                 </li>
-                <li className="bg-white m-4 h-[20vh] w-[28vw] rounded-2xl">
-                  <div className="flex justify-between items-center h-full">
+                <li className="bg-white m-4 h-[20vh] xl:w-[28vw] w-[23vw] rounded-2xl">
+                  <div className="flex justify-between items-center h-full scale-75 xl:scale-100 ml-[-1.5rem] xl:ml-0">
                     <div className="text-5xl m-3">{temperature}°C</div>
                     <ul className="flex flex-col gap-1 items-center m-4">
                       <li className="text-sm font-semibold">{dayOfWeek}</li>

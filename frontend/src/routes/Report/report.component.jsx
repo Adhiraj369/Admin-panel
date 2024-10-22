@@ -99,7 +99,7 @@ function Reports() {
 
   return (
     <div className="flex flex-col">
-      <div className="relative flex flex-col justify-between items-center w-full max-w-5xl mb-10">
+      {/* <div className="relative flex flex-col justify-between items-center w-full max-w-5xl mb-10">
         <div className="relative inline-block mt-[35px] align-middle">
           <div>
             <select
@@ -145,12 +145,59 @@ function Reports() {
           </span>
         </div>
 
-        <div className="absolute xl:right-[-180px] right-[-5px] top-24 text-gray-500 font-semibold whitespace-nowrap">
+        <div className="absolute xl:right-[-180px] lg:right-[-1200px] md:right-[120px] right-[-5px] top-24 text-gray-500 font-semibold whitespace-nowrap scale-[85%] max-w-[calc(100%-20px)] px-4">
           <span className="text-black">Date:</span> {currentDate}
           <img
             src={ArrowSmall}
             alt="ArrowSmall"
             className="inline-block w-[22px] h-[21px]"
+          />
+        </div>
+      </div> */}
+      <div className="relative flex flex-col justify-between items-center w-full max-w-5xl mb-10">
+        <div className="relative inline-block mt-[35px] align-middle">
+          <div>
+            <select
+              value={dropdownValue}
+              onChange={(e) => setDropdownValue(e.target.value)}
+              className="appearance-none p-2 bg-white rounded-full text-black font-semibold lg:w-[320px] w-[352px] h-[38px] items-center ml-20"
+              style={{ paddingRight: "40px" }}
+            >
+              <option
+                value="Garbage Vehicle"
+                className="px-4 py-1.5 text-gray-700 bg-white rounded-full border-2 border-black"
+              >
+                Garbage Vehicle
+              </option>
+              <option
+                value="Option 2"
+                className="px-4 py-1.5 text-gray-700 bg-white rounded-full border-2 border-black"
+              >
+                Option 2
+              </option>
+              <option
+                value="Option 3"
+                className="px-4 py-1.5 text-gray-700 bg-white rounded-full border-2 border-black"
+              >
+                Option 3
+              </option>
+            </select>
+          </div>
+          <span className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+            <img src={Arrow} alt="Arrow" className="w-[40px] h-[40px]" />
+          </span>
+        </div>
+
+        {/* Responsive Date Container */}
+        <div
+          className="flex items-center justify-end text-gray-500 font-semibold whitespace-nowrap px-3 mb-[-30px] mt-10"
+          style={{ width: "120%", maxWidth: "90vw" }}
+        >
+          <span className="text-black">Date:</span> {currentDate}
+          <img
+            src={ArrowSmall}
+            alt="ArrowSmall"
+            className="inline-block w-[22px] h-[21px] ml-2"
           />
         </div>
       </div>

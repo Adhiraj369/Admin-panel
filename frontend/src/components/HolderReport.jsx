@@ -4,7 +4,7 @@ function HolderReport({ title, img, url }) {
     <div className="flex justify-center w-[14vw] h-[20vh]">
       <Link
         to={url}
-        className="px-1 w-[200px] h-[163px] bg-white mx-10 my-2 rounded-[20px] flex flex-col items-center justify-center"
+        className="px-7 w-[200px] h-[150px] bg-white mx-10 my-2 rounded-[20px] flex flex-col items-center justify-center"
       >
         <img
           src={img}

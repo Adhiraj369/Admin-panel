@@ -100,12 +100,11 @@ function App() {
               path="dashboard/govscheme/addscheme"
               element={<Addschemes />}
             />
-            {/* <Route path="/" element={<Navigate to="/attendance" />} /> */}
 
+            <Route path="staffreport" element={<StaffReport />} />
             <Route path="attendance" element={<Attendance />} />
             <Route path="allvehicle" element={<AllVehicle />} />
             <Route path="maintenance" element={<Maintenance />} />
-            <Route path="staffreport" element={<StaffReport />} />
             <Route path="totalgarbage" element={<TotalGarbage />} />
           </Route>
 
@@ -123,5 +122,3 @@ function AuthGuard({ children }) {
 }
 
 export default App;
-
-// localhost:3000/admin/nested

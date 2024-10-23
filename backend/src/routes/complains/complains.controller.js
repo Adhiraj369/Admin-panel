@@ -10,7 +10,6 @@ const getWaterComplaints = async () => {
   }
 };
 
-
 const getGarbageComplaints = async () => {
   try {
     const complaints = await Complain.find({ Category: 'garbage' });
@@ -20,7 +19,6 @@ const getGarbageComplaints = async () => {
     throw error;
   }
 };
-
 
 const getDeadComplaints = async () => {
   try {
@@ -32,7 +30,6 @@ const getDeadComplaints = async () => {
   }
 };
 
-// Function to fetch all complaints (without category filter)
 const getAllComplaints = async () => {
   try {
     const complaints = await Complain.find({});
@@ -43,10 +40,26 @@ const getAllComplaints = async () => {
   }
 };
 
+// Function to mark a complaint as solved
+const markComplaintAsSolved = async (id) => {
+  try {
+    const updatedComplaint = await Complain.findByIdAndUpdate(
+      id,
+      { Burst: 1 },
+      { new: true }
+    );
+    return updatedComplaint;
+  } catch (error) {
+    console.error('Error marking complaint as solved:', error);
+    throw error;
+  }
+};
+
 // Export the functions for use in other parts of the app
 module.exports = {
   getWaterComplaints,
   getGarbageComplaints,
   getDeadComplaints,
   getAllComplaints,
+  markComplaintAsSolved,
 };

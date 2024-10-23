@@ -1,5 +1,12 @@
 const express = require('express');
-const {getAllComplaints,getGarbageComplaints,getWaterComplaints,getDeadComplaints} = require('./complains.controller');
+const Complain = require('../../models/complains/complains.mongo')
+const {
+  getAllComplaints,
+  getGarbageComplaints,
+  getWaterComplaints,
+  getDeadComplaints,
+  markComplaintAsSolved,
+} = require('./complains.controller');
 
 const ComplainsRouter = express.Router();
 
@@ -12,7 +19,6 @@ ComplainsRouter.get('/', async (req, res) => {
   }
 });
 
-//  route to fetch only water-related complaints
 ComplainsRouter.get('/water', async (req, res) => {
   try {
     const complaints = await getWaterComplaints();
@@ -22,7 +28,6 @@ ComplainsRouter.get('/water', async (req, res) => {
   }
 });
 
-// route to fetch only garbage-related complaints
 ComplainsRouter.get('/garbage', async (req, res) => {
   try {
     const complaints = await getGarbageComplaints();
@@ -32,15 +37,28 @@ ComplainsRouter.get('/garbage', async (req, res) => {
   }
 });
 
-
 ComplainsRouter.get('/dead', async (req, res) => {
   try {
     const complaints = await getDeadComplaints();
     res.status(200).json(complaints);
   } catch (error) {
-    res.status(500).json({ message: 'Error fetching deadanimals complaints', error });
+    res.status(500).json({ message: 'Error fetching dead complaints', error });
+  }
+});
+
+// Route to mark a complaint as solved
+ComplainsRouter.post('/mark-solved/:id', async (req, res) => {
+  try {
+    const updatedComplaint = await markComplaintAsSolved(req.params.id);
+    res.status(200).json(updatedComplaint);
+    
+    // Automatically update the status after 3 days (259200000 milliseconds)
+    setTimeout(async () => {
+      await Complain.findByIdAndUpdate(req.params.id, { Status: 1 });
+    }, 259200000); // 3 days in milliseconds
+  } catch (error) {
+    res.status(500).json({ message: 'Error marking complaint as solved', error });
   }
 });
 
 module.exports = ComplainsRouter;
-

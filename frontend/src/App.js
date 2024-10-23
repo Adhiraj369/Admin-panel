@@ -78,18 +78,18 @@ function App() {
             <Route
               path="dashboard/water"
               element={
-                <RoleGuard allowedRoles={["water"]}>
+
                   <WaterLeakage />
-                </RoleGuard>
+              
               }
             />
 
             <Route
               path="dashboard/deadanimal"
               element={
-                <RoleGuard allowedRoles={["animal"]}>
+                
                   <Animal />
-                </RoleGuard>
+               
               }
             />
 

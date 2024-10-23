@@ -24,11 +24,6 @@ const ComplainsSchema = new mongoose.Schema({
   Long: {
     type: Number,
     required: true,
-  },
-  id: {
-    type: String,
-    required: true,
-    unique: true,
   }
 });
 

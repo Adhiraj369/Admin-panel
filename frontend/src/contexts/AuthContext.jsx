@@ -8,7 +8,7 @@ export function AuthProvider({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(() => JSON.parse(localStorage.getItem('isAuthenticated')) || false);
 
 
-    const role = email.endsWith('@garbage.com') ? 'garbage' : 'user'; 
+    const role = email.endsWith('@garbage.com') ? 'garbage' : 'user';
 
     useEffect(() => {
         localStorage.setItem('email', email);

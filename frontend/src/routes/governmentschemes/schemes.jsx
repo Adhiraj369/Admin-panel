@@ -106,11 +106,15 @@ export default function Schemes() {
   return (
     <>
       <div>
-        <div className='flex justify-center items-center mr-[25rem] mt-2'>
+        {/* decreased mr from 25rem and changes justify-between */}
+        <div className='flex justify-start items-center mr-[10rem] ml-5 gap-1 mt-2'>
           <div className='mx-3'>
             <img src={Left} alt="" onClick={handleLeftClick} style={{ cursor: 'pointer' }} />
           </div>
-          <Dropdown />
+          {/* Included Dropdown inside a div */}
+          <div className='mr-36'>
+            <Dropdown />
+          </div>
           <Button onClick={handleClick}>
             Add Scheme
           </Button>
@@ -120,7 +124,8 @@ export default function Schemes() {
         </div>
 
         <div className='flex'>
-          <div className='flex flex-col my-[-1.2vh] min-w-[40vw]'>
+          {/* scaled down the div to 95 */}
+          <div className='flex flex-col my-[-1.2vh] min-w-[40vw] pt-2 mb-2 scale-95'>
             {Array.isArray(displayedSchemes) && displayedSchemes.length > 0 ? (
               <>
                 {displayedSchemes.reduce((acc, scheme, index) => {
@@ -130,7 +135,7 @@ export default function Schemes() {
                   acc[acc.length - 1].push(scheme);
                   return acc;
                 }, []).map((schemeGroup, groupIndex) => (
-                  <ul key={groupIndex} className='flex'>
+                  <ul key={groupIndex} className='flex mx-[-1.5rem]'>
                     {schemeGroup.map(scheme => (
                       <SchemeHolder key={scheme.id} title={scheme.name} url={scheme.url} />
                     ))}
@@ -147,9 +152,10 @@ export default function Schemes() {
           <div className='w-[30vw]'>
             <div className='border-l border-gray-300 m-8 mt-[-1.6rem]'>
               <ul className="flex flex-col justify-start">
-                <li className='bg-white m-4 h-[38vh] w-[24vw] rounded-xl flex flex-col items-center'>
-                  <p className='font-semibold text-xl mt-4 text-red-500'>Alerts</p>
-                  <div className='m-4 border-t-[1.5px] border-slate-200'>
+                {/* fixed the margins */}
+                <li className='bg-white m-4 mt-0 h-[38vh] w-[24vw] rounded-xl flex flex-col items-center'>
+                  <p className='font-semibold text-xl mt-1.5 text-red-500'>Alerts</p>
+                  <div className='m-2.5 border-t-[1.5px] border-slate-200'>
                     {error && <p className='text-red-500'>{error}</p>}
                     <ul className='flex flex-col'>
                       {alerts.length > 0 ? (
@@ -167,7 +173,8 @@ export default function Schemes() {
                 <li className='bg-white m-4 h-[20vh] w-[24vw] rounded-xl'>
                   <div className='flex flex-row justify-between'>
                     <div className='text-6xl m-4'>{temperature}°</div>
-                    <ul className='flex flex-col items-center m-4'>
+                    {/* fixed items-center and margin */}
+                    <ul className='flex flex-col items-start m-1'>
                       <li className='m-2 font-medium'>{dayOfWeek}</li>
                       <li className='m-2 font-medium'>{monthDay}</li>
                       <li className='m-2 font-medium'>{time}</li>

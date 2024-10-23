@@ -88,17 +88,18 @@ export default function Dashboard() {
 
         <div className="flex">
           <div className="flex flex-col items-center">
-            <ul className="flex mb-[-0.5rem]">
+            {/* Fixed the mb */}
+            <ul className="flex mb-[-0.3rem]">
               <Holder img={Img1} title="Garbage Vehicle" url="garbage" />
               <Holder img={Img2} title="Dead Animal" url="deadanimal" />
               <Holder img={Img3} title="Open Manholes" url="manholes" />
             </ul>
-            <ul className="flex mb-[-0.5rem]">
+            <ul className="flex mb-[-0.3rem]">
               <Holder img={Img4} title="Water Leakage" url="water" />
               <Holder img={Img5} title="Public Sandas" url="toilets" />
               <Holder img={Img6} title="Stagnant Water" url="stagnant" />
             </ul>
-            <ul className="flex mb-[-0.25rem]">
+            <ul className="flex mb-[0.2rem]">
               <Holder img={Img7} title="Road Repair" url="road" />
               <Holder img={Img8} title="Public Transport" url="transport" />
               <Holder img={Img9} title="Street Lights" url="lights" />

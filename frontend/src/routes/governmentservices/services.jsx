@@ -67,23 +67,26 @@ export default function Services() {
   return (
     <>
       <div>
-        <div className='flex justify-center items-center mr-[25rem] mt-2'>
+        {/* fixed mr */}
+        <div className='flex justify-center items-center mr-[35rem] mt-2'>
           <Dropdown />
         </div>
 
         <div className='flex'>
-          <div className='flex flex-col'>
-            <ul className='flex'>
+          {/* added mr */}
+          <div className='flex flex-col mt-7 mr-[-1.5rem]'>
+            {/* added my and mr(in first ul) */}
+            <ul className='flex my-[-0.7rem] mr-[-0.7rem]'>
               <SchemeHolder title="Service 1" url='live'/>
               <SchemeHolder  title="Service 2" url='live'/>
               <SchemeHolder  title="Service 3" url='live'/>
             </ul>
-            <ul className='flex'>
+            <ul className='flex mr-[-0.7rem]'>
             <SchemeHolder title="Service 4" url='live'/>
               <SchemeHolder  title="Service 5" url='live'/>
               <SchemeHolder  title="Service 6" url='live'/>
             </ul>
-            <ul className='flex'>
+            <ul className='flex mr-[-0.7rem]'>
               <SchemeHolder title="Service 7" url='live'/>
               <SchemeHolder  title="Service 8" url='live'/>
               <SchemeHolder  title="Service 9" url='live'/>
@@ -93,9 +96,10 @@ export default function Services() {
           <div className='w-[30vw]'>
             <div className='border-l border-gray-300 m-8 mt-[-1.6rem]'>
               <ul className="flex flex-col justify-start">
+                {/* fixed the margins */}
                 <li className='bg-white m-4 h-[38vh] w-[24vw] rounded-xl flex flex-col items-center'>
-                  <p className='font-semibold text-xl mt-4 text-red-500'>Alerts</p>
-                  <div className='m-4 border-t-[1.5px] border-slate-200'>
+                  <p className='font-semibold text-xl mt-1.5 text-red-500'>Alerts</p>
+                  <div className='m-2.5 border-t-[1.5px] border-slate-200'>
                     {error && <p className='text-red-500'>{error}</p>}
                     <ul className='flex flex-col'>
                       {alerts.length > 0 ? (
@@ -113,7 +117,8 @@ export default function Services() {
                 <li className='bg-white m-4 h-[20vh] w-[24vw] rounded-xl'>
                   <div className='flex flex-row justify-between'>
                     <div className='text-6xl m-4'>{temperature}°</div>
-                    <ul className='flex flex-col items-center m-4'>
+                    {/* fixed items-center and margin */}
+                    <ul className='flex flex-col items-start m-1'>
                       <li className='m-2 font-medium'>{dayOfWeek}</li>
                       <li className='m-2 font-medium'>{monthDay}</li>
                       <li className='m-2 font-medium'>{time}</li>

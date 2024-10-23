@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import AForm from "../../components/staffTables/AForm";
 import ATable from "../../components/staffTables/ATable";
 
-
 function Attendance() {
   const [tableData, setTableData] = useState([]);
 
@@ -35,10 +34,11 @@ function Attendance() {
 
   return (
     <>
-      
-      <div className="flex flex-col lg:flex-row items-start lg:space-x-4 px-8">
+      <div className="flex flex-col lg:flex-row items-start lg:space-x-4 px-8 w-full">
         <AForm onFormSubmit={handleFormSubmit} />
-        <ATable tableData={tableData} onSubmit={handleSubmitToServer} />
+        <div className="overflow-x-auto w-full">
+          <ATable tableData={tableData} onSubmit={handleSubmitToServer} />
+        </div>
       </div>
     </>
   );

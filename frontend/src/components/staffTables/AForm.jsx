@@ -97,7 +97,7 @@ const AForm = ({ onFormSubmit }) => {
       </div> */}
       <div className="flex justify-center mb-5">
         <select
-          className="w-80 p-2.5 rounded-full border-2 border-black text-lg font-semibold"
+          className="w-full lg:w-80 p-2.5 rounded-full border-2 border-black text-lg font-semibold"
           onChange={handleDropdownChange}
         >
           <option>Attendance</option>
@@ -145,7 +145,7 @@ const AForm = ({ onFormSubmit }) => {
           <InputField ref={noteRef} label="Note:" name="note" />
         </div>
 
-        <div className="flex justify-end mt-5">
+        <div className="flex justify-end mt-5 lg:col-span-2">
           <button
             type="submit"
             className="bg-blue-500 text-white py-2 px-6 rounded shadow-lg hover:bg-blue-700 transition-colors"

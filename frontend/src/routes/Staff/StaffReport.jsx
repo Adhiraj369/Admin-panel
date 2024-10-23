@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import SRForm from "../../components/staffTables/SRTable";
+import SRForm from "../../components/staffTables/SRForm";
 import SRTable from "../../components/staffTables/SRTable";
-
 
 function StaffReport() {
   const [tableData, setTableData] = useState([]);
@@ -35,7 +34,6 @@ function StaffReport() {
 
   return (
     <>
-     
       <div className="flex flex-col lg:flex-row items-start lg:space-x-4 px-8">
         <SRForm onFormSubmit={handleFormSubmit} />
         <SRTable tableData={tableData} onSubmit={handleSubmitToServer} />

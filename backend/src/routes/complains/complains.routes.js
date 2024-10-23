@@ -32,7 +32,7 @@ ComplainsRouter.get('/garbage', async (req, res) => {
   }
 });
 
-// route to fetch only electricity-related complaints
+
 ComplainsRouter.get('/dead', async (req, res) => {
   try {
     const complaints = await getDeadComplaints();

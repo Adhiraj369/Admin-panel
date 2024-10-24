@@ -101,7 +101,9 @@ export default function Services() {
                   <p className='font-semibold text-xl mt-1.5 text-red-500'>Alerts</p>
                   <div className='m-2.5 border-t-[1.5px] border-slate-200'>
                     {error && <p className='text-red-500'>{error}</p>}
-                    <ul className='flex flex-col overflow-y-auto max-h-[28vh] overflow-x-hidden w-[22vw]'>
+                    <ul className='flex flex-col overflow-y-auto max-h-[28vh] overflow-x-hidden w-[22vw]' style={{ 
+                      scrollbarWidth: 'none'  
+                    }}>
                       {alerts.length > 0 ? (
                         alerts.map((alert) => (
                           <li key={alert.id} className='m-1'>

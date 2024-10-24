@@ -99,7 +99,9 @@ function Alerts() {
           <div>
             {error && <p className="text-red-500">{error}</p>}
             {/* changed the position of overflow and height to correct container (div to ul) */}
-            <ul className="flex flex-col items-start gap-4 overflow-y-auto max-h-[320px]">
+            <ul className="flex flex-col items-start gap-4 overflow-y-auto xl:max-h-[45vh] max-h-[50vh]" style={{ 
+              scrollbarWidth: 'none'  
+            }}>
               {alerts.length > 0 ? (
                 alerts.map((alert, index) => (
                   <li

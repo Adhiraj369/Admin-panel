@@ -82,7 +82,7 @@ export default function Dashboard() {
   return (
     <>
       <div>
-        <div className="flex justify-center items-center mr-[26rem] xl:mr-[33rem] mt-4 z-50">
+        <div className="flex justify-center items-center py-4 xl:py-0 mr-[26rem] xl:mr-[33rem] mt-4 z-50">
           <Dropdown />
         </div>
 
@@ -120,7 +120,9 @@ export default function Dashboard() {
                   </p>
                   <div className="m-4 ml-0 border-t-[1.5px] w-full border-slate-200">
                     {error && <p className="text-red-500">{error}</p>}
-                    <ul className="flex flex-col mt-1 overflow-y-auto max-h-[32vh] overflow-x-hidden max-w-[27vw]">
+                    <ul className="flex flex-col mt-1 overflow-y-auto max-h-[32vh] overflow-x-hidden max-w-[27vw]" style={{ 
+                      scrollbarWidth: 'none'  
+                    }}>
                       {alerts.length > 0 ? (
                         alerts.map((alert) => (
                           <li key={alert.id} className="m-1 w-full">

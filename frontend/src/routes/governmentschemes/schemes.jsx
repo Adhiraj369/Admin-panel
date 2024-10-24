@@ -107,7 +107,7 @@ export default function Schemes() {
     <>
       <div>
         {/* decreased mr from 25rem and changes justify-between */}
-        <div className='flex justify-start items-center mr-[10rem] ml-5 gap-1 mt-2'>
+        <div className='flex justify-start items-center mr-[10rem] xl:ml-5 gap-1 mt-2'>
           <div className='mx-3'>
             <img src={Left} alt="" onClick={handleLeftClick} style={{ cursor: 'pointer' }} />
           </div>
@@ -157,7 +157,7 @@ export default function Schemes() {
                   <p className='font-semibold text-xl mt-1.5 text-red-500'>Alerts</p>
                   <div className='m-2.5 border-t-[1.5px] border-slate-200'>
                     {error && <p className='text-red-500'>{error}</p>}
-                    <ul className='flex flex-col'>
+                    <ul className='flex flex-col overflow-y-auto max-h-[28vh] overflow-x-hidden w-[23vw]'>
                       {alerts.length > 0 ? (
                         alerts.map((alert) => (
                           <li key={alert.id} className='m-1'>

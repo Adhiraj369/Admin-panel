@@ -87,19 +87,20 @@ export default function Dashboard() {
         </div>
 
         <div className="flex">
-          <div className="flex flex-col items-center">
+          {/* added gap for responsive design */}
+          <div className="flex flex-col items-center gap-3 xl:gap-0">
             {/* Fixed the mb */}
-            <ul className="flex mb-[-0.3rem]">
+            <ul className="flex mb-[-0.3rem] gap-3 xl:gap-0">
               <Holder img={Img1} title="Garbage Vehicle" url="garbage" />
               <Holder img={Img2} title="Dead Animal" url="deadanimal" />
               <Holder img={Img3} title="Open Manholes" url="manholes" />
             </ul>
-            <ul className="flex mb-[-0.3rem]">
+            <ul className="flex mb-[-0.3rem] gap-3 xl:gap-0">
               <Holder img={Img4} title="Water Leakage" url="water" />
               <Holder img={Img5} title="Public Sandas" url="toilets" />
               <Holder img={Img6} title="Stagnant Water" url="stagnant" />
             </ul>
-            <ul className="flex mb-[0.2rem]">
+            <ul className="flex mb-[0.2rem] gap-3 xl:gap-0">
               <Holder img={Img7} title="Road Repair" url="road" />
               <Holder img={Img8} title="Public Transport" url="transport" />
               <Holder img={Img9} title="Street Lights" url="lights" />
@@ -119,7 +120,7 @@ export default function Dashboard() {
                   </p>
                   <div className="m-4 ml-0 border-t-[1.5px] w-full border-slate-200">
                     {error && <p className="text-red-500">{error}</p>}
-                    <ul className="flex flex-col pt-3">
+                    <ul className="flex flex-col mt-1 overflow-y-auto max-h-[32vh] overflow-x-hidden max-w-[27vw]">
                       {alerts.length > 0 ? (
                         alerts.map((alert) => (
                           <li key={alert.id} className="m-1 w-full">

@@ -95,10 +95,11 @@ function Alerts() {
           </div>
         </div>
 
-        <div className="mt-7">
-          <div className="overflow-y-auto max-h-[500px]">
+        <div className="mt-5">
+          <div>
             {error && <p className="text-red-500">{error}</p>}
-            <ul className="flex flex-col items-start gap-4">
+            {/* changed the position of overflow and height to correct container (div to ul) */}
+            <ul className="flex flex-col items-start gap-4 overflow-y-auto max-h-[320px]">
               {alerts.length > 0 ? (
                 alerts.map((alert, index) => (
                   <li
@@ -111,7 +112,8 @@ function Alerts() {
                       <span className="font-bold">{alert.category}</span>{" "}
                       {/* Display category */}
                     </div>
-                    <img src={RightArrow} className="h-7 w-7" alt="" />
+                    {/* given margin right */}
+                    <img src={RightArrow} className="h-7 w-7 mr-3" alt="" />
                   </li>
                 ))
               ) : (

@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const InputField = React.forwardRef(({ label, type = "text", name }, ref) => {
   const inputRef = useRef(null);
@@ -25,6 +25,7 @@ const InputField = React.forwardRef(({ label, type = "text", name }, ref) => {
 });
 
 const AForm = ({ onFormSubmit }) => {
+  const [selectedCategory, setSelectedCategory] = useState("Attendance");
   const driverNameRef = useRef(null);
   const vehicleTypeRef = useRef(null);
   const wardNoRef = useRef(null);
@@ -34,9 +35,26 @@ const AForm = ({ onFormSubmit }) => {
   const inChargeNameRef = useRef(null);
   const noteRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const categoryMap = {
+    attendance: "Attendance",
+    totalgarbage: "Total Garbage",
+    allvehicle: "All Vehicle",
+    maintenance: "Maintenance",
+    staffreport: "Staff Report",
+  };
+
+  React.useEffect(() => {
+    const currentPath = location.pathname.split("/").pop().toLowerCase();
+    const category = categoryMap[currentPath] || "Attendance"; //mapping the url to dropdown here
+    setSelectedCategory(category);
+  }, [location]);
 
   const handleDropdownChange = (e) => {
     const selectedValue = e.target.value;
+    setSelectedCategory(selectedValue);
+
     switch (selectedValue) {
       case "Attendance":
         navigate("/admin/attendance");
@@ -90,14 +108,11 @@ const AForm = ({ onFormSubmit }) => {
         <span className="text-2xl mr-3 cursor-pointer">←</span>
         <h1 className="text-4xl font-bold">Garbage Vehicle</h1>
       </div>
-      {/* <div className="dropdown-container">
-        <select className="form-dropdown">
-          <option>Attendance</option>
-        </select>
-      </div> */}
+
       <div className="flex justify-center mb-5">
         <select
           className="w-full lg:w-80 p-2.5 rounded-full border-2 border-black text-lg font-semibold"
+          value={selectedCategory} // Bind the selected value
           onChange={handleDropdownChange}
         >
           <option>Attendance</option>
@@ -107,7 +122,8 @@ const AForm = ({ onFormSubmit }) => {
           <option>Staff Report</option>
         </select>
       </div>
-      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-5">
+
+      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-1">
         <InputField
           ref={driverNameRef}
           label="Driver Name:"

@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const InputField = React.forwardRef(({ label, type = "text", name }, ref) => {
   const inputRef = useRef(null);
@@ -25,6 +25,7 @@ const InputField = React.forwardRef(({ label, type = "text", name }, ref) => {
 });
 
 const MForm = ({ onFormSubmit }) => {
+  const [selectedCategory, setSelectedCategory] = useState("");
   const driverNameRef = useRef(null);
   const vehicleTypeRef = useRef(null);
   const wardNoRef = useRef(null);
@@ -33,7 +34,22 @@ const MForm = ({ onFormSubmit }) => {
   const detailsRef = useRef(null);
   const inChargeNameRef = useRef(null);
   const noteRef = useRef(null);
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const categoryMap = {
+    attendance: "Attendance",
+    totalgarbage: "Total Garbage",
+    allvehicle: "All Vehicle",
+    maintenance: "Maintenance",
+    staffreport: "Staff Report",
+  };
+
+  React.useEffect(() => {
+    const currentPath = location.pathname.split("/").pop().toLowerCase();
+    const category = categoryMap[currentPath] || "Attendance";
+    setSelectedCategory(category);
+  }, [location]);
 
   const handleDropdownChange = (e) => {
     const selectedValue = e.target.value;
@@ -98,6 +114,7 @@ const MForm = ({ onFormSubmit }) => {
       <div className="flex justify-center mb-5">
         <select
           className="w-80 p-2.5 rounded-full border-2 border-black text-lg font-semibold"
+          value={selectedCategory}
           onChange={handleDropdownChange}
         >
           <option>Attendance</option>
@@ -107,7 +124,7 @@ const MForm = ({ onFormSubmit }) => {
           <option>Staff Report</option>
         </select>
       </div>
-      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-5">
+      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-1">
         <InputField
           ref={driverNameRef}
           label="Driver Name:"

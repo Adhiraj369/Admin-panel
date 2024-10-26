@@ -191,7 +191,7 @@ function Reports() {
         {/* Responsive Date Container */}
         <div
           className="flex items-center justify-end text-gray-500 font-semibold whitespace-nowrap px-3 mb-[-30px] mt-10"
-          style={{ width: "120%", maxWidth: "90vw" }}
+          style={{ width: "120%", maxWidth: "80vw" }}
         >
           <span className="text-black">Date:</span> {currentDate}
           <img

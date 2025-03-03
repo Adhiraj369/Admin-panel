@@ -67,9 +67,6 @@ function Dropdown() {
             <a href="/admin/dashboard/govservice" className="block px-4 py-1.5 text-xs text-gray-700 bg-white rounded-full border-2 border-black hover:bg-gray-50" role="menuitem">
               Government Services
             </a>
-            <a href="/admin/dashboard/animalwelfare" className="block px-4 py-1.5 text-xs text-gray-700 bg-white rounded-full border-2 border-black hover:bg-gray-50" role="menuitem">
-              Animal Wellfare
-            </a>
           </div>
         </div>
       )}

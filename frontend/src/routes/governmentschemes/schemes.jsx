@@ -128,7 +128,7 @@ export default function Schemes() {
           <div className='flex flex-col my-[-1.2vh] min-w-[40vw] pt-2 mb-2 scale-95'>
             {Array.isArray(displayedSchemes) && displayedSchemes.length > 0 ? (
               <>
-                {displayedSchemes.reduce((acc, scheme, index) => {
+                {displayedSchemes.slice().reverse().slice(0, 9).reduce((acc, scheme, index) => {
                   if (index % 3 === 0) {
                     acc.push([]);
                   }

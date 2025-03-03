@@ -14,7 +14,7 @@ function Alerts() {
     async function fetchAlerts() {
       try {
         const response = await axios.get("http://localhost:8000/admin/alerts");
-        setAlerts(response.data);
+        setAlerts(response.data.reverse());
       } catch (error) {
         setError("Error fetching alerts. Please try again later.");
         console.error("Error fetching alerts:", error);

@@ -10,8 +10,9 @@ function Header() {
     const navigate = useNavigate();
     const location = useLocation();
     const path = location.pathname;
-    const { email } = useContext(AuthContext);
+    const { email, logout } = useContext(AuthContext);
     const [showDialog, setShowDialog] = useState(false);
+    const [showLogoutDialog, setShowLogoutDialog] = useState(false);
 
     const title = path.includes('admin/dashboard/govscheme')
     ? 'Schemes'
@@ -25,6 +26,9 @@ function Header() {
                     ? 'Staff'
                     : '';
 
+    const handleLogout = () => {
+        logout();
+    };
 
     function handleClick() {
         navigate('/admin/dashboard');
@@ -33,6 +37,10 @@ function Header() {
     function toggleDialog() {
         setShowDialog(prev => !prev);
     }
+
+    const toggleLogoutDialog = () => {
+        setShowLogoutDialog(prev => !prev);
+    };
 
     return (
         <div className='mt-6 mb-12 mx-10 relative'>
@@ -77,7 +85,22 @@ function Header() {
                 <li className='flex items-center'>
                     <img src={UserImg} alt="User Profile" className="w-8 h-8 object-contain cursor-pointer mt-4" />
                     <span className='mt-3 font-semibold p-2'>{email}</span>
-                    <img src={RightArrow} alt="" className='h-5 w-5 rotate-90 mt-4' />
+                    <img 
+                        src={RightArrow} 
+                        alt="" 
+                        className='h-5 w-5 rotate-90 mt-4' 
+                        onClick={toggleLogoutDialog}
+                    />
+                    {showLogoutDialog && (
+                        <div className="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-md">
+                            <button 
+                                onClick={handleLogout} 
+                                className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+                            >
+                                Logout
+                            </button>
+                        </div>
+                    )}
                 </li>
             </ul>
         </div>

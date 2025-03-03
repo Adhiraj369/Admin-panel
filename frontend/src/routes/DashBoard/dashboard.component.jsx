@@ -97,7 +97,7 @@ export default function Dashboard() {
             </ul>
             <ul className="flex mb-[-0.3rem] gap-3 xl:gap-0">
               <Holder img={Img4} title="Water Leakage" url="water" />
-              <Holder img={Img5} title="Public Sandas" url="toilets" />
+              <Holder img={Img5} title="Public Toilets" url="toilets" />
               <Holder img={Img6} title="Stagnant Water" url="stagnant" />
             </ul>
             <ul className="flex mb-[0.2rem] gap-3 xl:gap-0">
@@ -124,7 +124,7 @@ export default function Dashboard() {
                       scrollbarWidth: 'none'  
                     }}>
                       {alerts.length > 0 ? (
-                        alerts.map((alert) => (
+                        alerts.slice().reverse().map((alert) => (
                           <li key={alert.id} className="m-1 w-full">
                             {alert.Alert}
                           </li>

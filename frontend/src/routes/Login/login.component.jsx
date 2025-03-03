@@ -11,7 +11,7 @@ export default function Login({ onLogin }) {
   const passwordRef = useRef();
   const [loggedIn, setLoggedIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const { setEmail, setIsAuthenticated } = useContext(AuthContext);
+  const { setEmail, setIsAuthenticated, setIsAdmin } = useContext(AuthContext);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,13 +19,22 @@ export default function Login({ onLogin }) {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    // Simple validation
+    // Updated login validation with distinct emails for each role
     if (
-      (email === "you@water.com" || email === "you@garbage.com") &&
+      (email === "test@garbage.com" || 
+       email === "admin@admin.com" || 
+       email === "test@water.com" || 
+       email === "test@dead.com" || 
+       email === "test@stagnent.com" || 
+       email === "test@road.com" || 
+       email === "test@transport.com" || 
+       email === "test@toilet.com" || 
+       email === "test@manhole.com") &&
       password === "1"
     ) {
       setEmail(email); // Save the email in context
       setIsAuthenticated(true);
+      setIsAdmin(email === "admin@admin.com"); // Set admin status
       setLoggedIn(true);
       onLogin(true); // Notify parent component
     } else {

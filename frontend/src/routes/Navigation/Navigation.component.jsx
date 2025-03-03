@@ -6,6 +6,8 @@ import Settings from "../../assets/settings.png";
 import NavComponent from "../../components/NavComponent";
 
 export default function Navigation() {
+
+
   return (
     <>
       <Header />

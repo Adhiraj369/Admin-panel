@@ -24,7 +24,7 @@ const MapContainer = ({category}) => {
   const mapRef = useRef(null);
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: 'AIzaSyAU4SEzLK-hc2pBfE_xggoyAigxopPQ7mw' 
+    googleMapsApiKey: 'AIzaSyBUa_O-DXslxIbPqBci9_QxwrtCBoM6hlI' 
   });
 
   // Memoizing the createMarkers function using useCallback

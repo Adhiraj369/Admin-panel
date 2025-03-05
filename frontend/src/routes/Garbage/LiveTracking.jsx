@@ -13,7 +13,7 @@ export default function Livetracking() {
           <MapContainer category='garbage'/>
         </div>
         <div style={{ width: '35%' }} className="text-center flex flex-col items-center justify-start">
-          <div>Activa Vehicles</div>
+          <div>Active Vehicles</div>
           
           <div className="flex justify-between w-full py-3 pl-1 pr-5">
             <div className="flex text-sm">

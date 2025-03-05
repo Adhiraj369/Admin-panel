@@ -6,7 +6,7 @@ import RightArrow from "../../assets/right_arrow.png";
 function Alerts() {
   const [alerts, setAlerts] = useState([]);
   const [newAlert, setNewAlert] = useState("");
-  const [category, setCategory] = useState("cat1"); // Add state for category
+  const [category, setCategory] = useState("General Alert"); // Add state for category
   const [error, setError] = useState("");
   const currentDate = new Date().toLocaleDateString("en-US");
 
@@ -42,7 +42,7 @@ function Alerts() {
       });
       setAlerts([...alerts, response.data]);
       setNewAlert("");
-      setCategory("cat1"); // Reset category to default
+      setCategory("General Alert"); // Reset category to default
     } catch (error) {
       setError("Error posting alert. Please try again later.");
       console.error("Error posting alert:", error);
@@ -77,14 +77,14 @@ function Alerts() {
               Category:
             </label>
             <select
-              className="pr-28 pl-2 rounded-full py-[-1rem] h-[6vh]"
+              className="pr-8 pl-2 rounded-full py-[-1rem] h-[4vh]"
               id="category"
               value={category}
               onChange={handleCategoryChange}
             >
-              <option value="cat1">Cat 1</option>
-              <option value="cat2">Cat 2</option>
-              <option value="cat3">Cat 3</option>
+              <option value="General Alert">General Alert</option>
+              <option value="Emergency Alert">Emergency Alert</option>
+              <option value="Weather Alert">Weather Alert</option>
             </select>
             <button
               className="text-slate-200 bg-blue-600 px-16 py-[6px] shadow-lg text-md rounded-full transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg focus:outline-none m-4"

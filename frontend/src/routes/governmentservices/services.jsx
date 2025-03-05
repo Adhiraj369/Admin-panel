@@ -77,19 +77,19 @@ export default function Services() {
           <div className='flex flex-col mt-7 mr-[-1.5rem]'>
             {/* added my and mr(in first ul) */}
             <ul className='flex my-[-0.7rem] mr-[-0.7rem]'>
-              <SchemeHolder title="Service 1" url='live'/>
-              <SchemeHolder  title="Service 2" url='live'/>
-              <SchemeHolder  title="Service 3" url='live'/>
+              <SchemeHolder title="Application for Scholarship" url='live'/>
+              <SchemeHolder  title="Application for Issue of License for Wholesale Trade" url='live'/>
+              <SchemeHolder  title="Application for Farmer Produce Damage Assistance" url='live'/>
             </ul>
             <ul className='flex mr-[-0.7rem]'>
-            <SchemeHolder title="Service 4" url='live'/>
-              <SchemeHolder  title="Service 5" url='live'/>
-              <SchemeHolder  title="Service 6" url='live'/>
+            <SchemeHolder title="Application for Personal Accident Assistance" url='live'/>
+              <SchemeHolder  title="Application For Providing Winter Season Fruit Plants" url='live'/>
+              <SchemeHolder  title="Application for One Year Diploma in Food Processing" url='live'/>
             </ul>
             <ul className='flex mr-[-0.7rem]'>
-              <SchemeHolder title="Service 7" url='live'/>
-              <SchemeHolder  title="Service 8" url='live'/>
-              <SchemeHolder  title="Service 9" url='live'/>
+              <SchemeHolder title="Application For Installation of Pack House" url='live'/>
+              {/* <SchemeHolder  title="Service 8" url='live'/>
+              <SchemeHolder  title="Service 9" url='live'/> */}
             </ul>
           </div>
 

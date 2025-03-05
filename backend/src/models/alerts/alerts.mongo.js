@@ -12,7 +12,7 @@ const AlertsSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ['cat1', 'cat2', 'cat3'], // Allow only these values
+        enum: ['General Alert', 'Emergency Alert', 'Weather Alert'], // Allow only these values
         required: true,
     }
 });
